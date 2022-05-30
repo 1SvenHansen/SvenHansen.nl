@@ -2,6 +2,7 @@
 function setTheme(themeName) {
 	localStorage.setItem('theme', themeName);
 	document.documentElement.className = themeName;
+	setThemeToggleIcon(themeName);
 }
 
 // function to toggle between light and dark theme
@@ -13,11 +14,36 @@ function toggleTheme() {
 	}
 }
 
+function setThemeToggleIcon(themeName) {
+	if (themeName === 'theme-dark') {
+		document.getElementById('theme-toggle').classList.remove('fa-moon');
+		document.getElementById('theme-toggle').classList.add('fa-sun');
+	} else {
+		document.getElementById('theme-toggle').classList.remove('fa-sun');
+		document.getElementById('theme-toggle').classList.add('fa-moon');
+	}
+}
+
 // Immediately invoked function to set the theme on initial load
 (function () {
-	if (localStorage.getItem('theme') === 'theme-dark') {
-		setTheme('theme-dark');
-	} else {
-		setTheme('theme-light');
+	// Check if theme is not set in localStorage
+	if (localStorage.getItem('theme') === null) {
+		// Check if OS prefers dark mode
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setTheme('theme-dark');
+		}
+		// Check if OS prefers light mode
+		else {
+			setTheme('theme-light');
+		}
+	}
+	// Theme is set in localStorage
+	else {
+		// Check if OS prefers dark mode
+		if (localStorage.getItem('theme') === 'theme-dark') {
+			setTheme('theme-dark');
+		} else {
+			setTheme('theme-light');
+		}
 	}
 })();

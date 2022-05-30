@@ -84,11 +84,9 @@ a {
 	margin-right: 0.5rem;
 }
 
-.top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 1rem;
+#theme-toggle {
+	float: right;
+	cursor: pointer;
 }
 
 /* Responsive */
