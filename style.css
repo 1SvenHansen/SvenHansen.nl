@@ -62,6 +62,15 @@ a {
 	color: inherit;
 }
 
+header {
+	max-width: 75%;
+}
+
+footer {
+	margin-top: 5rem;
+	text-align: left;
+}
+
 .socials {
 	display: flex;
 	gap: 1rem;
@@ -97,6 +106,12 @@ a {
 	}
 	header {
 		max-width: 100%;
+	}
+	.socials {
+		flex-wrap: wrap;
+	}
+	.button {
+		width: 100%;
 	}
 	footer {
 		text-align: center;
