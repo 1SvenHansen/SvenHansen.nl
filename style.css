@@ -80,7 +80,8 @@ a {
 	outline: 2px dashed var(--kinda-grey);
 }
 
-.fa-brands {
+.fa-brands,
+.fa-regular {
 	margin-right: 0.5rem;
 }
 
