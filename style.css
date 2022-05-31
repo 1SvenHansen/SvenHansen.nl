@@ -24,7 +24,7 @@
 	--white: #121212;
 	--almost-black: #f2f2f2;
 	--almost-white: #000000;
-	--kinda-grey: #6a6d77;
+	--kinda-grey: #a1a3ab;
 }
 
 /* General Styling */
@@ -39,15 +39,22 @@ body {
 	color: var(--black);
 }
 
+h1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
 h2 {
-	font-size: 1.5rem;
-	font-weight: 400;
+	font-size: 1.4rem;
+	font-weight: 300;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
 	font-size: 1.2rem;
 	font-weight: 700;
-	margin: 0.5rem 0;
+	/* margin: 0.5rem 0; */
 }
 
 p {
@@ -87,6 +94,62 @@ footer {
 
 .button:hover {
 	outline: 2px dashed var(--kinda-grey);
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
+}
+
+.grid-item {
+    background-color: var(--white);
+    height: calc(100% - 2rem);
+    padding: 1rem;
+    transition: all .3s ease-in-out;
+    display: block; /* check if needed */
+
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item:hover {
+    /* transform: translateY(-5px); */
+}
+
+.grid-item-socials {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+    grid-auto-rows: auto;
+    
+}
+
+.grid-item-cover {
+    padding: 10px;
+    position: absolute;
+    bottom: -30px;
+    transition: all 0.5s ease;
+}
+
+.grid-item-cover h3 {
+    margin-bottom: 1em;
+}
+
+.grid-item:hover .grid-item-cover {
+    background-color: rgba(255,255,255,0.9);
+    bottom: 0;
+}
+
+.grid img {
+    height: auto;
+    width: 100%;
+    max-height: 10rem;
+    object-fit: cover;
 }
 
 .fa-brands,
