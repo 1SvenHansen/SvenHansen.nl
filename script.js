@@ -16,10 +16,10 @@ function toggleTheme() {
 
 function setThemeToggleIcon(themeName) {
 	if (themeName === 'theme-dark') {
-		document.getElementById('theme-toggle').classList.remove('fa-moon');
-		document.getElementById('theme-toggle').classList.add('fa-sun');
+		document.getElementById('theme-toggle').class.remove('fa-moon');
+		document.getElementById('theme-toggle').classList.add('fa-sun-bright');
 	} else {
-		document.getElementById('theme-toggle').classList.remove('fa-sun');
+		document.getElementById('theme-toggle').classList.remove('fa-sun-bright');
 		document.getElementById('theme-toggle').classList.add('fa-moon');
 	}
 }
