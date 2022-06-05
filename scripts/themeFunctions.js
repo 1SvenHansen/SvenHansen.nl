@@ -1,11 +1,6 @@
 window.onload = function () {
-	// initializeTheme();
+	initializeTheme();
 };
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-	const newColorScheme = event.matches ? 'dark' : 'light';
-	setTheme(newColorScheme);
-});
 
 // Set a given theme scheme with corresponding elements
 function setTheme(themeName) {
