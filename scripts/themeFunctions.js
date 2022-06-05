@@ -49,7 +49,7 @@ function triggerTheme() {
 	saveUserPreference(newUserPref);
 	setAppliedMode(getAppliedMode(newUserPref));
 
-	window.location = window.location;
+	window.location.reload();
 }
 
 // window.onload = function () {
