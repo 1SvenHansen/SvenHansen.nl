@@ -48,6 +48,8 @@ function triggerTheme() {
 	userPreference = newUserPref;
 	saveUserPreference(newUserPref);
 	setAppliedMode(getAppliedMode(newUserPref));
+
+	window.location = window.location;
 }
 
 // window.onload = function () {
