@@ -1,14 +1,14 @@
-window.onload = function () {
-	initializeTheme();
-};
+window.onload = function() {
+    initializeTheme();
+}
 
 // Set a given theme scheme with corresponding elements
 function setTheme(themeName) {
-	// Add theme to root element
+    // Add theme to root element
 	localStorage.setItem('theme', themeName);
 	document.documentElement.className = themeName;
 
-	// Set theme toggle icon
+    // Set theme toggle icon
 	setIcons(themeName);
 }
 
@@ -21,19 +21,10 @@ function toggleTheme() {
 	}
 }
 
-function getTheme() {
-	const localTheme = localStorage.getItem('theme');
-	if (localTheme === null) {
-		return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	} else {
-		return localTheme;
-	}
-}
-
 // Set icons corresponding to selected theme
 function setIcons(themeName) {
 	if (themeName === 'theme-dark') {
-		// Theme toggle icon
+        // Theme toggle icon
 		document.getElementById('theme-toggle').classList.remove('fa-moon');
 		document.getElementById('theme-toggle').classList.add('fa-sun');
 
@@ -41,7 +32,7 @@ function setIcons(themeName) {
 		document.getElementById('open-source-icon').classList.remove('filter-black');
 		document.getElementById('open-source-icon').classList.add('filter-white');
 	} else {
-		// Theme toggle icon
+        // Theme toggle icon
 		document.getElementById('theme-toggle').classList.remove('fa-sun');
 		document.getElementById('theme-toggle').classList.add('fa-moon');
 
@@ -54,5 +45,23 @@ function setIcons(themeName) {
 // Set theme by checking user preferences
 function initializeTheme() {
 	// Check if theme is not set in localStorage
-	setTheme(getTheme());
-}
+	if (localStorage.getItem('theme') === null) {
+		// Check if OS prefers dark mode
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setTheme('theme-dark');
+		}
+		// Check if OS prefers light mode
+		else {
+			setTheme('theme-light');
+		}
+	}
+	// Theme is set in localStorage
+	else {
+		// Check if OS prefers dark mode
+		if (localStorage.getItem('theme') === 'theme-dark') {
+			setTheme('theme-dark');
+		} else {
+			setTheme('theme-light');
+		}
+	}
+};
