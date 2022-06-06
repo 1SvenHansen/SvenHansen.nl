@@ -3,6 +3,10 @@
 	font-family: 'Space Grotesk', sans-serif;
 }
 
+html {
+	background-color: var(--almost-white);
+}
+
 /* Variables */
 :root {
 	--base-font-size: 12px;
@@ -42,8 +46,10 @@
 }
 
 /* General Styling */
-html {
-	background-color: var(--almost-white);
+html,
+body {
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -103,7 +109,8 @@ footer {
 	width: 10rem;
 }
 
-.grid-item-socials img, .grid-item-socials i {
+.grid-item-socials img,
+.grid-item-socials i {
 	width: 1rem;
 	height: 1rem;
 }
@@ -146,7 +153,8 @@ footer {
 	gap: 1rem;
 }
 
-.grid-item > img, .grid-item video {
+.grid-item > img,
+.grid-item video {
 	height: auto;
 	width: 100%;
 	max-height: 10rem;
