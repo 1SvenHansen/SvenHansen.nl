@@ -166,6 +166,9 @@ footer {
 	body {
 		padding: 5vw 5vw;
 	}
+	#theme-toggle {
+		display: none;
+	}
 	.socials {
 		flex-wrap: wrap;
 	}
