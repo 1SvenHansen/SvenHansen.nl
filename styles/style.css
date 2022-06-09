@@ -25,12 +25,12 @@ html {
 }
 
 .theme-dark {
-	--black: #ffffff;
-	--white: #121212;
-	--almost-black: #f2f2f2;
-	--almost-white: #000000;
-	--kinda-grey: #a1a3ab;
-	--green: #23b5b5;
+    --black: #ffffff;
+    --white: #121212;
+    --almost-black: #f2f2f2;
+    --almost-white: #000000;
+    --kinda-grey: #a1a3ab;
+    --green: #23b5b5;
 }
 
 /* Root Styling */
